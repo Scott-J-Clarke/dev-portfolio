@@ -1,35 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+/* eslint-disable no-unused-vars */
+// Formerly code for Vite page.
+// Use 'state' when refining porfolio later? 
+// import { useState } from 'react'
+// Import specific styling later?
+// import './App.css'
+
+import React from 'react'; // Does 'React' need to be imported if it is never used?
+import { Outlet } from 'react-router-dom';
+import Nav from './components/Nav';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Nav />
+      {/* Where each child element from 'main.jsx' will show up: */}
+      <Outlet />
     </>
   )
 }
 
-export default App
+export default App;
