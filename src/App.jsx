@@ -6,10 +6,9 @@ import Nav from './components/Nav';
 // import Project from './components/Project';
 // import Footer from './components/Footer';
 
-// Commented out while working on setting up '<Header />' and '<Nav />' files:
 import AboutPage from './pages/AboutPage';
 import PortfolioPage from './pages/PortfolioPage';
-// import ContactPage from './pages/ContactPage';
+import ContactPage from './pages/ContactPage';
 // import ResumePage from './pages/ResumePage'
 
 function App() {
@@ -22,9 +21,9 @@ function App() {
     if (currentTab === 'Portfolio') {
       return <PortfolioPage />;
     }
-    // if (currentTab === 'Contact') {
-    //   return <ContactPage />;
-    // }
+    if (currentTab === 'Contact') {
+      return <ContactPage />;
+    }
     // if (currentTab === 'Resume') {
     //   return <ResumePage />;
     // }
