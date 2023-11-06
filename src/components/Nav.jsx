@@ -1,6 +1,6 @@
 {/* Want to add styling on line below so that nav tabs will highlight on hover. */}
 {/* How can I do this using Tailwind? */}
-{/* Is there a way to add a ternary operator and Tailwind styling on line 19 and 30? */}
+{/* Is there a way to add a ternary operator and Tailwind styling on line 19, 30, 41? */}
 
 import { useEffect } from 'react';
 
@@ -32,6 +32,18 @@ function Nav(props) {
               Portfolio
           </a>
         </li>
+
+        <li className='nav-item'>
+          <a
+            href='#contact'
+            onClick={() => handleTabChange('Contact')}
+
+            className={currentTab === 'Contact'}
+            >
+              Contact
+            </a>
+        </li>
+
       </ul>
     </nav>
   )
