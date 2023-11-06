@@ -9,7 +9,7 @@ import Nav from './components/Nav';
 import AboutPage from './pages/AboutPage';
 import PortfolioPage from './pages/PortfolioPage';
 import ContactPage from './pages/ContactPage';
-// import ResumePage from './pages/ResumePage'
+import ResumePage from './pages/ResumePage'
 
 function App() {
   const [currentTab, handleTabChange] = useState('About Me');
@@ -24,9 +24,9 @@ function App() {
     if (currentTab === 'Contact') {
       return <ContactPage />;
     }
-    // if (currentTab === 'Resume') {
-    //   return <ResumePage />;
-    // }
+    if (currentTab === 'Resume') {
+      return <ResumePage />;
+    }
     return <AboutPage />;
   };
 

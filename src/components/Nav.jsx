@@ -44,6 +44,17 @@ function Nav(props) {
             </a>
         </li>
 
+        <li className='nav-item'>
+          <a
+            href='#resume'
+            onClick={() => handleTabChange('Resume')}
+
+            className={currentTab === 'Resume'}
+            >
+              Resume
+            </a>
+        </li>
+
       </ul>
     </nav>
   )
