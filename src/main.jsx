@@ -1,16 +1,14 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import App from "./App"
 import { BrowserRouter } from "react-router-dom"
+// Do I need to import Tailwind for styling? Will it style every page from here?
+import App from "./App"
 
-// Import Tailwind and the app screen goes blank:
-// import 'tailwindcss';
-
-const root = ReactDOM.createRoot(document.getElementById("root"))
+const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>
-)
+);
