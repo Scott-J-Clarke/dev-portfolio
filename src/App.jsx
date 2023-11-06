@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-// Commented out while working on setting up and nesting files:
 import Header from './components/Header';
-import Nav from './components/Nav';
+// Unnecessary to import 'Nav' since it is imported into 'Header.jsx'?
+// import Nav from './components/Nav';
 // import Project from './components/Project';
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 
 import AboutPage from './pages/AboutPage';
 import PortfolioPage from './pages/PortfolioPage';
@@ -38,7 +38,7 @@ function App() {
       handleTabChange={handleTabChange}
     ></Header>
     <main>{renderTab()}</main>
-    {/* <Footer></Footer> */}
+    <Footer></Footer>
     </>
   );
 }

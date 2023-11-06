@@ -6,10 +6,10 @@ function Header(props) {
     return (
         <div>
             <section>
-                <header className='Title'>
-                    <div>
+                <header className='Navbar'>
+                    {/* <div>
                         <h1>Scott Clarke's Portfolio</h1>
-                    </div>
+                    </div> */}
                     <div>
                         <Nav
                             currentTab={currentTab}
@@ -23,10 +23,10 @@ function Header(props) {
                 <div className='hero-image'>
                     {/* Insert an image here: */}
                     {/* <img /> */}
-                    <h2>Welcome</h2>
+                    {/* <h2>Welcome</h2>
                     <p>
                         This is Scott Clarke's portfolio.
-                    </p>
+                    </p> */}
                 </div>
             </section>
 
