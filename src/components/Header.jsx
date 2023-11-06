@@ -21,7 +21,6 @@ function Header(props) {
             
             <section className='Hero'>
                 <div className='hero-image'>
-                    {/* Insert an image here: */}
                     {/* <img /> */}
                     {/* <h2>Welcome</h2>
                     <p>
