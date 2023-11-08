@@ -10,7 +10,7 @@ function Nav(props) {
 
   return (
     <nav>
-      <ul className='nav nav-tabs'>
+      <ul className='flex flex-row'>
         <li className='nav-item'>
           <a
             href='#about'
@@ -61,28 +61,3 @@ function Nav(props) {
 }
 
 export default Nav;
-
-// Import 'Link' is needed for former linking structure to work:
-// import { Link } from 'react-router-dom';
-
-// Comment out links that worked to try a different structure:
-// export default function Nav() {
-//     return (
-//         <nav>
-//         <ul>
-//           <li>
-//             <Link to="/">About Me</Link>
-//           </li>
-//           <li>
-//             <Link to="/portfolio">Portfolio</Link>
-//           </li>
-//           <li>
-//             <Link to="/contact">Contact</Link>
-//           </li>
-//           <li>
-//             <Link to="/resume">Resume</Link>
-//           </li>
-//         </ul>
-//       </nav> 
-//     )
-// }
