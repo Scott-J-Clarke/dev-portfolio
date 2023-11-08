@@ -1,4 +1,4 @@
-import profileImage from '../assets/profile/scott-photo.jpg';
+import profileImage from '../public/scott-photo.jpg';
 
 export default function AboutPage() {
     return (
