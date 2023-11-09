@@ -1,10 +1,10 @@
 import profileImage from '../public/scott-photo.jpg';
 
-export default function AboutPage() {
+function About() {
     return (
         <div>
             <h1>About Me</h1>
-            <img src={profileImage} style={{ width: '15%' }} alt='profile' />
+            <img src={profileImage} style={{ width: '15%' }} alt='profile photo' />
             <p>
                 I am a listener, learner, reader, and writer. <br/> <br/>
                 Before becoming a web developer, I was a teacher for 15 years. Most of my career was spent teaching  elementary and middle school students at two private schools in Taiwan. <br/> <br/>
@@ -16,3 +16,5 @@ export default function AboutPage() {
         </div>
     );
 }
+
+export default About;
