@@ -1,7 +1,6 @@
 import scottResume from '../public/scott-resume-for-portfolio.pdf';
 import { BsCloudDownload } from 'react-icons/bs';
 
-
 // All the styling below is done in Bootstrap (not Tailwind!):
 function Resume() {
     return (
