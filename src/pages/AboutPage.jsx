@@ -2,19 +2,30 @@ import profileImage from '../public/scott-photo.jpg';
 
 function About() {
     return (
-        <div>
+        <div className='p-5'>
             <h1>About Me</h1>
             <img src={profileImage} style={{ width: '15%' }} alt='profile photo' />
             <p>
-                I am a listener, learner, reader, and writer. <br/> <br/>
-                Before becoming a web developer, I was a teacher for 15 years. Most of my career was spent teaching  elementary and middle school students at two private schools in Taiwan. <br/> <br/>
-                As a teacher, I had to listen closely to my students to understand what they were trying to say because many of them were shy and almost all of them spoke English as their second language. <br/> <br/>
-                Teaching made me into a better learner. I taught English, science, social studies, and drama, and there were always new concepts to understand and transmit to my students. <br/> <br/>
-                Reading has been a part of my life for as long as I can remember. There was tons of reading to do as a teacher, and I continue to read as a web developer, but now I'm reading code and about coding! <br/> <br/>
-                Finally, after listening, learning, and reading, I write. In the past, I wrote reading passages and made handouts for my students, and these days I'm writing code for my personal projects.
+                <span className="italic">I'm a listener, learner, reader, and writer. What does that mean?</span><br /><br />
+
+                    As a teacher for 15 years, I did a lot of listening. I listened to students, colleagues, and
+                    parents. I learned to listen closely, to give each person my full attention, and to paraphrase
+                    back what I thought they had just said, asking the person to correct me. If you listen well, you can help
+                    someone sort out what they think.<br /><br />
+
+                    If you listen, you will learn. In the past year, I've learned how to build basic web applications using
+                    technologies like MongoDB, Express, React, Node.js, and JavaScript. I've learned how to write documentation
+                    and deploy these creations to GitHub and Heroku.<br /><br />
+
+                    I enjoy reading. I did my undergraduate degree in English and history, which meant I was reading for
+                    hours and hours each day. As a teacher, I read to prepare better lessons, and as a programmer I
+                    read to improve my code.<br /><br />
+
+                    Writing is thinking. It's last on this list because when I write I gather in what I've heard,
+                    learned, and read, and try to create something with it. Writing is simple but not easy.
             </p>
         </div>
     );
 }
 
-export default About;
+export default About;                        
