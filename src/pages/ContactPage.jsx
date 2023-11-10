@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-// If using an email validator function, import it here (and develop it in a 'utils' folder).
-// Should I import Tailwind so that I can use a form later?
+import { useState } from 'react';
+import { validateEmail } from '../../utils/helpers';
 
 function Contact() {
-    // Create 'state' variables for the fields in the contact form.
-    // Set their initial values to an empty string:
+    // Create 'state' variables for contact form fields (set initial values to empty strings):
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [message, setMessage] = useState('');
@@ -26,77 +24,89 @@ function Contact() {
         }
     };
 
-    // Stop the default behavior of the form submit (which is to refresh the page):
+    // Stop default behavior of form submission (wants to refresh the page):
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
-    // First, check to see that an email and username has been entered (go back later to add email validation):
-    if (!email || !username) {
-        setErrorMessage('Email or username has not been entered into form.');
+    // First, check to see that an email has been entered:
+    const isValid = validateEmail(email);
+    if (!isValid) {
+        setErrorMessage('Email is not valid.');
+        // Exit from this code block so user can make correction(s):
+        return;
+    }
+
+    // Has a username been entered:
+    if (!username) {
+        setErrorMessage('Please enter a name.');
         // Exit from this code block so user can make correction(s):
         return;
     }
 
     // Second, check that a message has been entered into the form:
-    // if (!setMessage(message)) { // Before altering the line.
     if (!message) {
-        setErrorMessage('Message is required in form.');
+        setErrorMessage('Please enter a message.');
         return;
     }
 
-    // Finally, after a successful submission, we want to clear the contact form:
+    // After a successful submission, we want to clear the contact form:
     setEmail('');
     setUsername('');
     setMessage('');
+    setErrorMessage('');
     }
 
-// How do I import a Tailwind form?
-return (
-    <div className='contact-form'>
-        <h3>Contact Me</h3>
-            <form className='form'>
-                <label for='contact-name'>Your Name</label>
-                <input
-                    value={username}
-                    name='username'
-                    onChange={handleInputChange}
-                    type='text'
-                    id='contact-name'
-                    placeholder='Your name'
-                />
+    return (
+        <section>
+            <div className='center'>
+                <h2 className='page-header'>Contact Me</h2>
+            </div>
 
-                <label for='contact-email'>Your Email</label>
-                <input 
-                    value={email}
-                    name='email'
-                    onChange={handleInputChange}
-                    type='email'
-                    id='contact-email'
-                    placeholder='Your email'
-                />
+            <div>
+                <form id='contact-form' onSubmit={handleFormSubmit}>
+                    <div>
+                        <label>Name:</label>
+                        <br></br>
+                        <input
+                            value={username}
+                            type='text'
+                            onChange={handleInputChange}
+                            name='username'
+                        />
+                    </div>
 
-                <label for='contact-message'>Your Message</label>
-                <input 
-                    value={message}
-                    name='message'
-                    onChange={handleInputChange}
-                    type='message'
-                    id='contact-message'
-                    placeholder='Your message'
-                />
+                    <div>
+                        <label>Email:</label>
+                        <br></br>
+                        <input
+                            value={email}
+                            type='email'
+                            onChange={handleInputChange}
+                            name='email'
+                        />
+                    </div>
 
-                <button type='button' onClick={handleFormSubmit}>
-                    Submit
-                </button>
-            </form>
-    
-    {errorMessage && (
-        <div>
-            <p className='error-text'>{errorMessage}</p>
-        </div>
-    )}
-    </div>
-    );
+                    <div>
+                        <label>Message:</label>
+                        <br></br>
+                        <textarea
+                            value={message}
+                            rows='5'
+                            onChange={handleInputChange}
+                            name='message'
+                        />
+                    </div>
+
+                    {errorMessage && (
+                        <div>
+                            <p className='error-text'>{errorMessage}</p>
+                        </div>
+                    )}
+                    <button type='submit'>Submit</button>
+                </form>
+            </div>
+        </section>
+    )
 }
 
 export default Contact;
