@@ -3,7 +3,7 @@ import { BsLinkedin } from 'react-icons/bs';
 
 function Footer() {
     return (
-        <footer>
+        <footer className='p-5'>
             <h2>Made by Scott Clarke</h2>
             <p>
                 <ul>

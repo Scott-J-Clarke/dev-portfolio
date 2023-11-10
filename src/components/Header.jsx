@@ -19,13 +19,13 @@ function Header() {
             case "Resume":
                 return <ResumePage />;
 
-            default:
-                return <AboutPage />; // This would seem to set <AboutPage /> as landing spot.
+            // default:
+            //     return <AboutPage />; // 'default: return <AboutPage />' unnecessary with 'useState('About Me')'?
         }
     };
     
     return (
-        <div>
+        <div className='p-5'>
             <nav className='navbar'>
                 <div className='navbar-brand'>
                     <a
@@ -50,20 +50,3 @@ function Header() {
 }
 
 export default Header;
-
-// const { currentPage, handlePageChange } = props;
-
-//     return (
-//         <div>
-//             <section>
-//                 <header className='Navbar'>
-//                     <div>
-//                         <Nav
-//                             currentPage={currentPage}
-//                             handlePageChange={handlePageChange}
-//                         ></Nav>
-//                     </div>
-//                 </header>
-//             </section>
-//         </div>
-//     );
