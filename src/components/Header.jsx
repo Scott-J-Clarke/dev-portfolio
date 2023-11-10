@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import Navigation from './Navigation';
 import AboutPage from '../pages/AboutPage';
 import PortfolioPage from '../pages/PortfolioPage';
@@ -6,7 +7,7 @@ import ContactPage from '../pages/ContactPage';
 import ResumePage from '../pages/ResumePage'
 
 function Header() {
-    const [currentPage, handlePageChange] = useState('About Me'); // Is this needed if <AboutPage /> is landing spot?
+    const [currentPage, handlePageChange] = useState('About Me'); // Does this set <AboutPage /> as landing spot?
 
     const renderPage = () => {
         switch(currentPage) {
@@ -18,9 +19,6 @@ function Header() {
                 return <ContactPage />;
             case "Resume":
                 return <ResumePage />;
-
-            // default:
-            //     return <AboutPage />; // 'default: return <AboutPage />' unnecessary with 'useState('About Me')'?
         }
     };
     
