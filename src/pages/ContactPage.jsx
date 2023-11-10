@@ -2,31 +2,39 @@ import { useState } from 'react';
 import { validateEmail } from '../../utils/helpers';
 
 function Contact() {
-    // Create 'state' variables for contact form fields (set initial values to empty strings):
-    const [email, setEmail] = useState('');
-    const [username, setUsername] = useState('');
-    const [message, setMessage] = useState('');
+    // 'state' variables for contact form fields are set to empty strings:
+    const [formState, setFormState] = useState({
+        email: '',
+        username: '',
+        message: ''
+    })
+
     const [errorMessage, setErrorMessage] = useState('');
+
+    const { email, username, message } = formState;
 
     const handleInputChange = (e) => {
         // Getting the value and name of the input that triggered the change:
-        const { target } = e;
-        const inputType = target.name;
-        const inputValue = target.value;
+        const { name, value } = e.target;
+        setFormState({...formState, [name]: value })
 
         // Based on the input type, set the state of either email, username, or message:
-        if (inputType === 'email') {
-            setEmail(inputValue);
-        } else if (inputType === 'username') {
-            setUsername(inputValue);
-        } else {
-            setMessage(inputValue);
+        if (name === 'email') {
+            const isValid = validateEmail(value);
+            setErrorMessage(isValid ? '' : 'Email is not valid.');
+        } else if (name === 'username') {
+            setErrorMessage(value ? '' : 'Please enter a username.')
         }
     };
 
     // Stop default behavior of form submission (wants to refresh the page):
     const handleFormSubmit = (e) => {
         e.preventDefault();
+
+        if (!message.trim()) {
+            setErrorMessage('Message cannot be empty.');
+            return;
+        }
 
     // First, check to see that an email has been entered:
     const isValid = validateEmail(email);
@@ -44,15 +52,13 @@ function Contact() {
     }
 
     // Second, check that a message has been entered into the form:
-    if (!message) {
-        setErrorMessage('Please enter a message.');
+    if (!message.length) {
+        setErrorMessage('Message cannot be empty.');
         return;
     }
 
     // After a successful submission, we want to clear the contact form:
-    setEmail('');
-    setUsername('');
-    setMessage('');
+    setFormState({ email: '', username: '', message: ''});
     setErrorMessage('');
     }
 
@@ -65,8 +71,8 @@ function Contact() {
             <div>
                 <form id='contact-form' onSubmit={handleFormSubmit}>
                     <div>
-                        <label>Name:</label>
-                        <br></br>
+                        <label htmlFor='username'>Name:</label>
+                        <br />
                         <input
                             value={username}
                             type='text'
@@ -76,8 +82,8 @@ function Contact() {
                     </div>
 
                     <div>
-                        <label>Email:</label>
-                        <br></br>
+                        <label htmlFor='email'>Email:</label>
+                        <br />
                         <input
                             value={email}
                             type='email'
@@ -87,8 +93,8 @@ function Contact() {
                     </div>
 
                     <div>
-                        <label>Message:</label>
-                        <br></br>
+                        <label htmlFor='message'>Message:</label>
+                        <br />
                         <textarea
                             value={message}
                             rows='5'
