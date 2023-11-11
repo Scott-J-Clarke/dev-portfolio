@@ -27,6 +27,10 @@ function Contact() {
         }
     };
 
+    const handleBlur = (e) => {
+        setErrorMessage(`${e.target.name.charAt(0).toUpperCase() + e.target.name.slice(1)} cannot be blank.`)
+    }
+
     // Stop default behavior of form submission (wants to refresh the page):
     const handleFormSubmit = (e) => {
         e.preventDefault();
@@ -77,6 +81,7 @@ function Contact() {
                             value={username}
                             type='text'
                             onChange={handleInputChange}
+                            onBlur={handleBlur}
                             name='username'
                         />
                     </div>
@@ -88,6 +93,7 @@ function Contact() {
                             value={email}
                             type='email'
                             onChange={handleInputChange}
+                            onBlur={handleBlur}
                             name='email'
                         />
                     </div>
@@ -99,6 +105,7 @@ function Contact() {
                             value={message}
                             rows='5'
                             onChange={handleInputChange}
+                            onBlur={handleBlur}
                             name='message'
                         />
                     </div>

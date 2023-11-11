@@ -2,12 +2,18 @@ import profileImage from '../public/scott-photo.jpg';
 
 function About() {
     return (
-        <div className='p-5'>
-            <h1>About Me</h1>
-            <img src={profileImage} style={{ width: '15%' }} alt='profile photo' />
-            <p>
-                <span className="italic">I'm a listener, learner, reader, and writer. What does that mean?</span><br /><br />
-
+        // <div className='md:ml-4'>
+                // <p className='font-semibold mt-6 mb-2'>I'm a listener, learner, reader, and writer.</p><br />
+                // <p className='block italic'>What does that mean?</p><br />
+            // </div>  
+        <div className='flex flex-col md:flex-row m-5 items-center'>
+            <img 
+                src={profileImage} 
+                className='w-50'
+                alt='profile photo' 
+            />
+            {/* <div> */}
+                <p className='ml-4'>
                     As a teacher for 15 years, I did a lot of listening. I listened to students, colleagues, and
                     parents. I learned to listen closely, to give each person my full attention, and to paraphrase
                     back what I thought they had just said, asking the person to correct me. If you listen well, you can help
@@ -23,7 +29,8 @@ function About() {
 
                     Writing is thinking. It's last on this list because when I write I gather in what I've heard,
                     learned, and read, and try to create something with it. Writing is simple but not easy.
-            </p>
+                </p>
+            {/* </div> */}
         </div>
     );
 }
