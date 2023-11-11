@@ -55,8 +55,6 @@ const projects = [
 function PortfolioPage() {
     return (
         <div>
-            <p className='text-xl'>Portfolio</p>
-            <hr />
             {projects.map(project => (
                 <Project
                     key={project.id}

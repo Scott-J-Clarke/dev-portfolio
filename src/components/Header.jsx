@@ -7,39 +7,41 @@ import ContactPage from '../pages/ContactPage';
 import ResumePage from '../pages/ResumePage'
 
 function Header() {
-    const [currentPage, handlePageChange] = useState('About Me'); // Does this set <AboutPage /> as landing spot?
+    const [currentPage, handlePageChange] = useState();
 
     const renderPage = () => {
         switch(currentPage) {
-            case "About Me":
+            case 'About':
                 return <AboutPage />;
-            case "Portfolio":
+            case 'Portfolio':
                 return <PortfolioPage />;
-            case "Contact":
+            case 'Contact':
                 return <ContactPage />;
-            case "Resume":
+            case 'Resume':
                 return <ResumePage />;
+            default:
+                return <AboutPage />;
         }
     };
     
     return (
         <div className='p-5'>
-            <nav className='navbar'>
-                <div className='navbar-brand'>
+            <nav className='flex flex-col items-center md:flex-row md:justify-between'>
+                <div className='navbar-brand mb-4 md:mb-0 md:mr-4'>
                     <a
                         className='navbar-item'
                         rel='noreferrer'
                         target='_blank'
                         href='https://github.com/Scott-J-Clarke?tab=repositories'
                     >
-                        <span className='text-4xl'>Scott Clarke</span>
+                        <span className='text-4xl p-5'>Scott Clarke</span>
                     </a>
                 </div>
-            </nav>
             <Navigation
                 currentPage={currentPage}
                 handlePageChange={handlePageChange}
             />
+            </nav>
             <main>
                 <div>{renderPage(currentPage)}</div>
             </main>
