@@ -54,18 +54,22 @@ const projects = [
 
 function PortfolioPage() {
     return (
-        <div>
+        <div className='p-5 flex flex-wrap justify-center'>
             {projects.map(project => (
-                <Project
-                    key={project.id}
-                    image={project.image}
-                    title={project.title}
-                    github={project.github}
-                    demo={project.demo}
-                />
+                <div key={project.id} className='w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/3 p-2'>
+                    <Project
+                        image={project.image} 
+                        title={project.title}
+                        github={project.github}
+                        demo={project.demo}
+                    />
+                </div>
             ))}
         </div>
     );
 }
 
 export default PortfolioPage;
+
+
+// m-8 aspect-w-4 aspect-h-3' style={{ height: '300px' }}

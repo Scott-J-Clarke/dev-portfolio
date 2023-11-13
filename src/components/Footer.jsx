@@ -1,4 +1,4 @@
-import { BsGithub, BsLinkedin } from 'react-icons/bs';
+import { BsGithub, BsLinkedin, BsPenFill } from 'react-icons/bs';
 
 function Footer() {
     return (
@@ -15,6 +15,13 @@ function Footer() {
                     Scott's LinkedIn:
                     <li className='flex flex-col items-center'>
                         <BsLinkedin className='text-4xl mt-2' />
+                    </li>
+                </a>
+
+                <a href='https://vividquill.substack.com/' className='text-gray-500 hover:text-gray-700'>
+                    Scott's Substack:
+                    <li className='flex flex-col items-center'>
+                        <BsPenFill className='text-4xl mt-2' />
                     </li>
                 </a>
             </ul>
