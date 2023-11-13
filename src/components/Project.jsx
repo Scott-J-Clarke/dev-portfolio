@@ -10,8 +10,8 @@ function Project({ image, title, github, demo }) {
                     />
                 </div>
                 <div className='italic flex justify-between'>
-                    <a href={github}>GitHub Repository</a>
-                    <a href={demo}>Demo</a>
+                    <a href={github} target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+                    <a href={demo} target="_blank" rel="noopener noreferrer">Demo</a>
                 </div>
         </div>
     )
