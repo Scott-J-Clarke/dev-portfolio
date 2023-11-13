@@ -24,11 +24,14 @@ function Contact() {
             setErrorMessage(isValid ? '' : 'Email is not valid.');
         } else if (name === 'username') {
             setErrorMessage(value ? '' : 'Please enter a username.')
+        } else if (name === 'message') {
+            setErrorMessage('');
         }
     };
 
     const handleBlur = (e) => {
-        setErrorMessage(`${e.target.name.charAt(0).toUpperCase() + e.target.name.slice(1)} cannot be blank.`)
+        const { name, value } = e.target;
+        setErrorMessage(value ? '' : `${name.charAt(0).toUpperCase() + name.slice(1)} cannot be blank.`)
     }
 
     // Stop default behavior of form submission (wants to refresh the page):
@@ -67,15 +70,11 @@ function Contact() {
     }
 
     return (
-        <section>
-            <div className='center'>
-                <h2 className='page-header'>Contact Me</h2>
-            </div>
-
+        <section className='bg-gray-500 text-white m-5 mx-64 p-4 text-center'>
             <div>
                 <form id='contact-form' onSubmit={handleFormSubmit}>
-                    <div>
-                        <label htmlFor='username'>Name:</label>
+                    <div className='m-4'>
+                        <label htmlFor='username' className='mr-2'>Username:</label>
                         <br />
                         <input
                             value={username}
@@ -83,10 +82,12 @@ function Contact() {
                             onChange={handleInputChange}
                             onBlur={handleBlur}
                             name='username'
+                            placeholder='Leave your username'
+                            className='w-1/2 px-4 text-black border-2 border-black'
                         />
                     </div>
 
-                    <div>
+                    <div className='m-4'>
                         <label htmlFor='email'>Email:</label>
                         <br />
                         <input
@@ -95,10 +96,12 @@ function Contact() {
                             onChange={handleInputChange}
                             onBlur={handleBlur}
                             name='email'
+                            placeholder='Leave your email'
+                            className='w-1/2 px-4 text-black border-2 border-black'
                         />
                     </div>
 
-                    <div>
+                    <div className='m-4'>
                         <label htmlFor='message'>Message:</label>
                         <br />
                         <textarea
@@ -107,6 +110,8 @@ function Contact() {
                             onChange={handleInputChange}
                             onBlur={handleBlur}
                             name='message'
+                            placeholder='Leave a message'
+                            className='w-1/2 px-4 text-black border-2 border-black'
                         />
                     </div>
 
@@ -115,7 +120,7 @@ function Contact() {
                             <p className='error-text'>{errorMessage}</p>
                         </div>
                     )}
-                    <button type='submit'>Submit</button>
+                    <button type='submit' className='m-4 bg-black p-2 rounded-md'>Submit</button>
                 </form>
             </div>
         </section>
