@@ -70,6 +70,3 @@ function PortfolioPage() {
 }
 
 export default PortfolioPage;
-
-
-// m-8 aspect-w-4 aspect-h-3' style={{ height: '300px' }}
