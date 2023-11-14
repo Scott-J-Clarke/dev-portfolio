@@ -70,9 +70,9 @@ function Contact() {
     }
 
     return (
-        <section className='bg-gray-500 text-white m-5 mx-64 p-4 text-center'>
+        <section className='bg-gray-500 text-white m-5 mx-2 md:mx-32 lg:mx-64 p-4 text-center'>
             <div>
-                <form id='contact-form' onSubmit={handleFormSubmit}>
+                <form id='contact-form' onSubmit={handleFormSubmit} className='sm:w-3/4 md:w-2/3 w-full mx-auto'>
                     <div className='m-4'>
                         <label htmlFor='username' className='mr-2'>Username:</label>
                         <br />
@@ -82,8 +82,7 @@ function Contact() {
                             onChange={handleInputChange}
                             onBlur={handleBlur}
                             name='username'
-                            placeholder='Leave your username'
-                            className='w-1/2 px-4 text-black border-2 border-black'
+                            className='w-3/4 px-4 text-black border-2 border-black'
                         />
                     </div>
 
@@ -96,8 +95,7 @@ function Contact() {
                             onChange={handleInputChange}
                             onBlur={handleBlur}
                             name='email'
-                            placeholder='Leave your email'
-                            className='w-1/2 px-4 text-black border-2 border-black'
+                            className='w-3/4 px-4 text-black border-2 border-black'
                         />
                     </div>
 
@@ -110,8 +108,7 @@ function Contact() {
                             onChange={handleInputChange}
                             onBlur={handleBlur}
                             name='message'
-                            placeholder='Leave a message'
-                            className='w-1/2 px-4 text-black border-2 border-black'
+                            className='w-3/4 px-4 text-black border-2 border-black'
                         />
                     </div>
 

@@ -8,7 +8,7 @@ function About() {
                 className='w-50'
                 alt='profile photo' 
             />
-            <p className='ml-4'>
+            <p className='ml-4 mt-4'>
                 As a teacher for 15 years, I did a lot of listening. I listened to students, colleagues, and
                 parents. I learned to listen closely, to give each person my full attention, and to paraphrase
                 back what I thought they had just said, asking the person to correct me. If you listen well, you can help
