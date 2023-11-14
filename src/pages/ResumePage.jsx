@@ -4,7 +4,7 @@ import { BsCloudDownload } from 'react-icons/bs';
 function Resume() {
     return (
         <div>
-            <section className='bg-gray-500 text-white m-5 mx-64 p-4 text-center'>
+            <section className='bg-gray-500 text-white m-5 mx-4 md:mx-8 lg:mx-64 p-4 text-center'>
                 <div className='flex flex-wrap'>
                     <div className='w-full md:w-1/2 lg:w-1/2 xl:w-1/2 mb-4'>
                         <div className='article'>
@@ -38,7 +38,7 @@ function Resume() {
                 </div>
             </section>
 
-            <section className='bg-gray-500 text-white m-5 mx-64 p-4 flex justify-center items-center'>
+            <section className='bg-gray-500 text-white m-5 mx-4 md:mx-8 lg:mx-64 p-4 flex justify-center items-center'>
                 <div className='flex flex-row'>
                     <div>
                         <div className='flex flex-row text-white'>

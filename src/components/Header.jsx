@@ -28,14 +28,7 @@ function Header() {
         <div className='p-5'>
             <nav className='flex flex-col items-center md:flex-row md:justify-between'>
                 <div className='navbar-brand mb-4 md:mb-0 md:mr-4'>
-                    <a
-                        className='navbar-item'
-                        rel='noreferrer'
-                        target='_blank'
-                        href='https://github.com/Scott-J-Clarke?tab=repositories'
-                    >
-                        <span className='text-4xl p-5'>Scott Clarke</span>
-                    </a>
+                    <span className='text-4xl p-5'>Scott Clarke</span>
                 </div>
             <Navigation
                 currentPage={currentPage}
